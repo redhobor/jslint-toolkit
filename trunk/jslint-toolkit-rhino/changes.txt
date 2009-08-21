@@ -1,0 +1,47 @@
+JSLint-Toolkit Changes:
+
+
++2009-08-21 v1.0
+	-rename jStyle to JSLint-Toolkit and make it an open source project.
+	-Fix a bug when the basePath is the same as the name. 
+
+
++2009-07-13 v0.2 final
+	-Modify jStyle.ini to config.json.
+	-Fix some bugs.
+
+
++2009-06-29 v0.2 beta1
+	-JSLint messages have been classfied to L1 and L3 (refer to doc\lint_msg.htm).
+	-Font color in middle table indicate which level this message belongs to.
+	-Add message level filter "Hide L3".
+	-Optimize tree load speed.
+	
+
++2009-06-22 v0.1 final
+	-Add IE support(Now jStyle support all major browser:Firefox, IE, Chrome).
+	-Hide tree root.
+	-Hide table status bar.
+
+
++2009-06-18 v0.1 beta 3
+	-Add [excludeName] section in the jStyle.ini.
+	-Delete folder which has no file.
+	-Now jStyle is compatible with Linux, thanks for your help Sandy:).
+
+
++2009-06-11 v0.1 beta 2
+	-Only javascript file end with ".js" can be processed.
+	-Add icon to "Expand All" and "Collapse All" toolbar button.
+	-"Collapse All" doesn't collapse the root node of the tree.
+	-The root node of the tree is unclickable.
+	-Table's column is resizable, and fill all the unused space.
+	-Add "Source Code" tool.
+
+
++2009-06-03 v0.1 beta
+	-Qooxdoo template support.
+
+
++2009-05-27 v0.1 preview
+	-initial version.  
