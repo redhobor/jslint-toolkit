@@ -1,0 +1,1 @@
+[[3,39,20,"Expected a number and instead saw '''.","/Expected '{' and instead saw '.+'\\./,"],[3,39,21,"Expected '}' and instead saw ' '.","/Expected '{' and instead saw '.+'\\./,"],[3,68,18,"Be careful when making functions within a loop. Consider putting the function in a closure.","})();"]]
