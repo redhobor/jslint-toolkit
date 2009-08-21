@@ -1,5 +1,5 @@
 
-print("jStyle v1.0");
+print("JSLint-Toolkit v1.0");
 print("=============================================");
 
 var System = Packages.java.lang.System;
