@@ -2,7 +2,8 @@ JSLint-Toolkit Changes:
 
 
 +2009-08-21 v1.0
-	-rename jStyle to JSLint-Toolkit and make it an open source project.
+	+rename jStyle to JSLint-Toolkit and make it an open source project.
+		-http://code.google.com/p/jslint-toolkit/
 	-Fix a bug when the basePath is the same as the name. 
 
 
