@@ -5,12 +5,12 @@
   </ModulePrefs>
   <Content type="html" view="home">
     <![CDATA[
-      Hello, small world!
+      Hello, small world!2
     ]]>
   </Content>
   <Content type="html" view="canvas">
     <![CDATA[
-      Hello, big world!
+      Hello, big world!2
     ]]>
   </Content>
 </Module>
