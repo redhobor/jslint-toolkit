@@ -1,13 +1,13 @@
 
 {
 	// JavaScript files to check
-	"includes": ["scripts\\source", "scripts\\jquery-1.3.2.js"],
+	"includes": ["scripts\\source"],
 	
 	// Exclude files
 	"excludes": [],
 	
-	// Exclude file names
-	"excludeNames": ["CVS"],
+	// Exclude file names (Regex expression)
+	"excludeNames": ["\\.svn", "CVS"],
 	
 	// Output directory
 	"outPath": "out"
