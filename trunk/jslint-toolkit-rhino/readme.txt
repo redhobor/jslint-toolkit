@@ -2,15 +2,14 @@
 
 DESCRIPTION:
 
-jStyle is used to check your JavaScript code style through a single click.
+JSLint-Toolkit is a tool to check your JavaScript code quality through a single click.
 
 ======================================================================
 
 REQUIREMENTS:
 
 Java version "1.5.0_06"
-
-Other versions of java may or may not work with jStyle.
+Other versions of java may or may not work with JSLint-Toolkit.
 
 ======================================================================
 
@@ -19,8 +18,8 @@ USAGE:
 You will need to have Java installed on your computer. For more 
 information see http://www.java.com/getjava/
 
-Before running the jStyle app you should change your current
-working directory of jStyle folder. Then follow the steps below.
+Before running the JSLint-Toolkit app you should change your current
+working directory of JSLint-Toolkit folder. Then follow the steps below.
 
 [For Windows]
 1. Change the config.json file.

@@ -1,5 +1,8 @@
 JSLint-Toolkit Changes:
 
++2010-08-13 v1.1
+	+Enhancement.
+
 
 +2009-08-21 v1.0
 	+rename jStyle to JSLint-Toolkit and make it an open source project.
@@ -46,3 +49,4 @@ JSLint-Toolkit Changes:
 
 +2009-05-27 v0.1 preview
 	-initial version.  
+
