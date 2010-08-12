@@ -1,100 +1,87 @@
 
 function config(file) {
 
-	var fileContent = io.readFile(file).replace(/\/\/.*\n/g, "");
-	
-	var configObj = JSON.parse(fileContent);
-	
-	outPath = configObj.outPath;
-	var includes = configObj.includes;
-	var excludes = configObj.excludes;
-	var excludeNames = configObj.excludeNames;
-//    var includes = [];
-//    var excludes = [];
-//    var excludeNames = [];
-//    var includeStart = false;
-//    var excludeStart = false;
-//    var excludeNameStart = false;
-//    var i = 0;
-//    var configLines = readFile(file).split(newLine);
-//	print(configLines.length);
-//
-//    for (i = 0; i < configLines.length; i++) {
-//        var line = configLines[i].trim();
-//        if (line) {
-//            if (line === '[include]') {
-//                includeStart = true;
-//                excludeStart = false;
-//                excludeNameStart = false;
-//            }
-//            else if (line === '[exclude]') {
-//                includeStart = false;
-//                excludeStart = true;
-//                excludeNameStart = false;
-//            }
-//            else if (line === '[excludeName]') {
-//                includeStart = false;
-//                excludeStart = false;
-//                excludeNameStart = true;
-//            }
-//            else {
-//                var path = "";
-//                if (includeStart) {
-//                    path = io.resolvePath(line);
-//                    includes.push(path);
-//                    //print("includes-" + path);
-//                }
-//                else if (excludeStart) {
-//                    path = io.resolvePath(line);
-//                    excludes.push(path);
-//                    //print("excludes-" + path);
-//                }
-//                else if (excludeNameStart) {
-//                    excludeNames.push(line);
-//                    //print("excludeNames-" + line);
-//                }
-//            }
-//        }
-//    }
+    // Read config.json file content, ignore the lines started with //.
+    var fileContent = io.readFile(file).replace(/\/\/.*\n/g, "");
 
-    function notInExclude(includePath) {
+    var configObj = JSON.parse(fileContent);
+
+    // outPath is defined in the main.js.
+    outPath = configObj.outPath;
+    var includes = configObj.includes,
+        excludes = configObj.excludes,
+        excludeNames = configObj.excludeNames;
+
+    // path is not include in excludeNames and excludes.
+    function inExclude(path, fileName) {
         for (var i = 0; i < excludeNames.length; i++) {
-            if (includePath.endsWith(excludeNames[i])) {
-                return false;
+            if (new RegExp(excludeNames[i]).test(fileName)) {
+                return true;
             }
         }
-        if (excludes.contains(includePath)) {
-            return false;
+        if (excludes.contains(path)) {
+            return true;
         }
-        return true;
+        return false;
     }
 
+    // Generate the whole tree base on input path.
+    // For example:
+    //    {
+    //        "name": "source",
+    //        "path": "scripts\\source",
+    //        "type": "folder",
+    //        "kids": [
+    //            {
+    //                "name": "config.js",
+    //                "path": "scripts\\source\\config.js",
+    //                "type": "file"
+    //            },
+    //            {
+    //                "name": "lint.js",
+    //                "path": "scripts\\source\\lint.js",
+    //                "type": "file"
+    //            },
+    //            {
+    //                "name": "main.js",
+    //                "path": "scripts\\source\\main.js",
+    //                "type": "file"
+    //            },
+    //            {
+    //                "name": "util.js",
+    //                "path": "scripts\\source\\util.js",
+    //                "type": "file"
+    //            }
+    //        ]
+    //    }
+    function tree(path) {
+        var pathObject = new File(path);
+        var fileName = pathObject.getName() + "";
+        // This path is in the exclude path list.
+        if (inExclude(path, fileName)) {
+            return null;
+        }
 
-    function tree(path, excludes, excludeNames) {
-        var pathFile = new File(path);
-        var pathFileName = pathFile.getName() + "";
         var json = {
-            "name": pathFileName,
+            "name": fileName,
             "path": path,
             "type": "file"
         };
 
-        if (pathFile.isDirectory()) {
+        // path is a file or a directory.
+        if (pathObject.isDirectory()) {
             json.kids = [];
             json.type = "folder";
-            var kidPaths = pathFile.list();
+            var kidPaths = pathObject.list(), kidPath, kidJson;
             for (var i = 0; i < kidPaths.length; i++) {
-                var kidPath = path + slash + kidPaths[i];
-                if (notInExclude(kidPath)) {
-                    var kidObj = tree(kidPath, excludes, excludeNames);
-                    if (kidObj) {
-                        json.kids.push(kidObj);
-                    }
+                kidPath = path + slash + kidPaths[i];
+                kidJson = tree(kidPath);
+                if (kidJson) {
+                    json.kids.push(kidJson);
                 }
             }
-        }
-        else {
-            if (!/\.js$/.test(pathFileName)) {
+        } else {
+            if (!/\.js$/.test(fileName)) {
                 return null;
             }
         }
@@ -103,25 +90,20 @@ function config(file) {
     }
 
     // create tree
-    var treeJSON = [];
-    for (i = 0; i < includes.length; i++) {
-        var include = includes[i];
-        if (notInExclude(include)) {
-            var nodeObj = tree(includes[i], excludes, excludeNames);
-            var basePath = include;
-            var lastSlashIndex = basePath.lastIndexOf(slash);
+    var treeJSON = [], i = 0, includePath, includeJson, basePath, lastSlashIndex;
+    for (; i < includes.length; i++) {
+        includePath = includes[i];
+
+        includeJson = tree(includePath);
+        if (includeJson) {
+            basePath = includePath;
+            lastSlashIndex = basePath.lastIndexOf(slash);
             if (lastSlashIndex >= 0) {
                 basePath = basePath.substr(0, lastSlashIndex);
             }
-            
-			if(nodeObj.name === basePath) {
-				nodeObj.basePath = "";
-			} else {
-				nodeObj.basePath = basePath;
-			}
-            if (nodeObj) {
-                treeJSON.push(nodeObj);
-            }
+
+            includeJson.basePath = includeJson.name === basePath ? "" : basePath;
+            treeJSON.push(includeJson);
         }
     }
 

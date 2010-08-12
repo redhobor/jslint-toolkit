@@ -1,5 +1,5 @@
 
-print("JSLint-Toolkit v1.0");
+print("JSLint-Toolkit v1.1");
 print("=============================================");
 
 var System = Packages.java.lang.System;
@@ -8,7 +8,8 @@ var slash = System.getProperty("file.separator");
 var newLine = System.getProperty("line.separator");
 
 var outPath = "";
-// Read configuration
+
+// Read configuration, outPath will be assigned in the funtion call.
 var treeJSON = config(arguments[0]);
 
 // make necessary directories
@@ -19,47 +20,31 @@ io.makeDir(outPath + slash + "data" + slash + "errors");
 io.makeDir(outPath + slash + "data" + slash + "source");
 
 
-
-
-//var totalErrorCount = 0;
-//var currentLintCount = 0;
-//var totalFileCount = 0;
-//for (var i = 0; i < treeJSON.length; i++) {
-//    var file = treeJSON[i];
-//    if (file.fileCount) {
-//        totalFileCount += file.fileCount;
-//    } else {
-//        totalFileCount++;
-//    }
-//}
-//print("Find " + totalFileCount + " JavaScript files.");
-
 // treeJSON will be modified in this function call
 (function lintTree(rootArray) {
-    var errors = [0, 0, 0];
-    for (var i = 0; i < rootArray.length; i++) {
-        var file = rootArray[i];
-        var errorCount = [0, 0, 0];
+    var errorTotal = [0, 0, 0], i = 0, file, errorCount;
+    for (; i < rootArray.length; i++) {
+        file = rootArray[i];
+        errorCount = [0, 0, 0];
         if (file.type === "folder" && file.kids) {
             errorCount = lintTree(file.kids);
-            delete file.path;
-        }
-        else {
+            //delete file.path;
+        } else {
             // Lint JavaScript file
-            errorCount = lint(file.path);
-            delete file.path;
+            errorCount = lint(file.path, file.name);
+            //delete file.path;
         }
         file.errors = errorCount;
-        errors[0] += errorCount[0];
-        errors[1] += errorCount[1];
-        errors[2] += errorCount[2];
+        errorTotal[0] += errorCount[0];
+        errorTotal[1] += errorCount[1];
+        errorTotal[2] += errorCount[2];
     }
-    return errors;
+    return errorTotal;
 })(treeJSON);
 
 
 // save treeJSON
-io.saveFile(outPath + slash + "data" + slash + "json" + slash + "tree.json", JSON.stringify(treeJSON));
+io.saveFile(outPath + slash + "data" + slash + "json" + slash + "tree.json", JSON.stringify(treeJSON, null, 4));
 
 print("=============================================");
-print("Done!");
+print("All Done!");
