@@ -1,7 +1,7 @@
 
 {
 	// JavaScript files to check
-	"includes": ["scripts\\source"],
+	"includes": ["scripts\\source", "scripts\\jquery"],
 	
 	// Exclude files
 	"excludes": [],
