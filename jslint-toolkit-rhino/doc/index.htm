@@ -34,7 +34,7 @@
             padding: 5px;
             font-weight: bold;
         }
-		/*
+        /*
         .syntaxhighlighter
         {
             margin: 1px 0 5px !important;
@@ -56,8 +56,7 @@
         {
             display: none !important;
         }
-		*/
-    </style>
+		*/</style>
 
     <script type="text/javascript">
         $(function() {
@@ -78,26 +77,24 @@
 </head>
 <body>
     <h1>
-        JSLint Message classification</h1>
-    With <a href="http://code.google.com/p/jslint-toolkit/">jslint-toolkit</a>
-    (JSLint inside) tool, we can check warnings in our JavaScript files.
+        JSLint-Toolkit Warning Classification</h1>
+    With <a href="http://code.google.com/p/jslint-toolkit/">JSLint-Toolkit</a>, we can check warnings in our JavaScript files.
     <br />
     But always there are too many warnings that we couldn't find the real issues.
     <br />
-    It's necessary to classify the warnings to two levels.
+    It's necessary to classify the warnings into two levels.
     <br />
     <br />
     <div class="l1">
-        Critical errors, should be fixed ASAP.
+        L1: Critical warnings, which should be fixed ASAP.
     </div>
     <div class="l3">
-        Optional errors, should be fixed when you have enough time.
+        L2: Optional warnings, which should be fixed when you have enough time.
     </div>
     <br />
     <br />
-    Following are possible error messages.I will update this list manually.
+    Following are the incomplete warning messages.I will update this list manually.
     <br />
-    <strong>Any feedbacks are welcome!</strong>
     <br />
     <br />
     <ul>
@@ -172,20 +169,6 @@
         </li>
         <li>
             <div class="l1">
-                Bad for in variable '{a}'.
-            </div>
-            <pre>
-    // Bad for in variable 'prop'.
-    // BAD
-    for (prop in headers) {
-    }
-    // GOOD
-    for (var prop in headers) {
-    }
-    </pre>
-        </li>
-        <li>
-            <div class="l1">
                 Unnecessary semicolon.
             </div>
             <pre>
@@ -195,22 +178,6 @@
     // GOOD
     function validate() {
     }
-    </pre>
-        </li>
-        <li>
-            <div class="l1">
-                Bad line breaking before '{a}'.
-            </div>
-            <pre>
-    // Bad line breaking before '+'.
-    // BAD
-    var frame = '&lt;div class="contentPane"&gt;' 
-        + '&lt;div class="comments_show_hide panel_action"&gt;'
-        + '&lt;/div&gt;&lt;/div&gt;';
-    // GOOD
-    var frame = '&lt;div class="contentPane"&gt;' +
-        '&lt;div class="comments_show_hide panel_action"&gt;' +
-        '&lt;/div&gt;&lt;/div&gt;';
     </pre>
         </li>
         <li>
@@ -284,6 +251,41 @@
     if (typeof (options.data) === 'string') {
     }
     </pre>
+        </li>
+        <li>
+            <div class="l3">
+                Bad for in variable '{a}'.
+            </div>
+            <pre>
+    // Bad for in variable 'prop'.
+    // BAD
+    for (prop in headers) {
+    }
+    // GOOD
+    for (var prop in headers) {
+    }
+    </pre>
+        </li>
+        <li>
+            <div class="l3">
+                Bad line breaking before '{a}'.
+            </div>
+            <pre>
+    // Bad line breaking before '+'.
+    // BAD
+    var frame = '&lt;div class="contentPane"&gt;' 
+        + '&lt;div class="comments_show_hide panel_action"&gt;'
+        + '&lt;/div&gt;&lt;/div&gt;';
+    // GOOD
+    var frame = '&lt;div class="contentPane"&gt;' +
+        '&lt;div class="comments_show_hide panel_action"&gt;' +
+        '&lt;/div&gt;&lt;/div&gt;';
+    </pre>
+        </li>
+        <li>
+            <div class="l3">
+                ......
+            </div>
         </li>
     </ul>
 </body>

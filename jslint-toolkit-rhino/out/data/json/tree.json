@@ -8,6 +8,7 @@
                 "name": "config.js",
                 "path": "scripts\\source\\config.js",
                 "type": "file",
+                "lines": 137,
                 "errors": [
                     0,
                     0,
@@ -18,16 +19,18 @@
                 "name": "lint.js",
                 "path": "scripts\\source\\lint.js",
                 "type": "file",
+                "lines": 100,
                 "errors": [
                     3,
-                    0,
-                    3
+                    1,
+                    2
                 ]
             },
             {
                 "name": "main.js",
                 "path": "scripts\\source\\main.js",
                 "type": "file",
+                "lines": 83,
                 "errors": [
                     0,
                     0,
@@ -38,6 +41,7 @@
                 "name": "util.js",
                 "path": "scripts\\source\\util.js",
                 "type": "file",
+                "lines": 121,
                 "errors": [
                     0,
                     0,
@@ -49,8 +53,8 @@
         "fileCount": 4,
         "errors": [
             3,
-            0,
-            3
+            1,
+            2
         ]
     }
 ]

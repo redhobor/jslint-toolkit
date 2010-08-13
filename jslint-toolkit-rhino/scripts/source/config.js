@@ -14,11 +14,13 @@ function config(file) {
 
     // path is not include in excludeNames and excludes.
     function inExclude(path, fileName) {
-        for (var i = 0; i < excludeNames.length; i++) {
+        var i;
+        for (i = 0; i < excludeNames.length; i++) {
             if (new RegExp(excludeNames[i]).test(fileName)) {
                 return true;
             }
         }
+        
         if (excludes.contains(path)) {
             return true;
         }
