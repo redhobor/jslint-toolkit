@@ -35,7 +35,7 @@ var io = {
         if (!io.exists(path)) {
             return '';
         }
-        return readFile(path);
+        return readFile(path, 'utf-8');
     },
 
     saveFile: function(path, content) {

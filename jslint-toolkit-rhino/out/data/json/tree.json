@@ -19,7 +19,7 @@
                 "name": "lint.js",
                 "path": "scripts\\source\\lint.js",
                 "type": "file",
-                "lines": 100,
+                "lines": 106,
                 "errors": [
                     3,
                     1,
@@ -69,8 +69,8 @@
                 "lines": 4377,
                 "errors": [
                     183,
-                    127,
-                    56,
+                    128,
+                    55,
                     "Stopping, unable to continue. (39% scanned)."
                 ]
             },
@@ -90,8 +90,8 @@
         "fileCount": 2,
         "errors": [
             193,
-            127,
-            66
+            128,
+            65
         ]
     }
 ]
