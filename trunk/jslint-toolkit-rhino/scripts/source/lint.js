@@ -38,7 +38,9 @@ function lint(filePath, fileShortName) {
         /Extra comma\./,
         /Unnecessary semicolon\./,
         /Missing radix parameter\./,
-        /'.+' was used before it was defined\./];
+        /'.+' was used before it was defined\./,
+		/Stopping, unable to continue\. \(\d+% scanned\)\./,
+		/Too many errors\. \(\d+% scanned\)\./];
 
     var fatalErrors = [/Stopping, unable to continue\. \(\d+% scanned\)\./,
         /Too many errors\. \(\d+% scanned\)\./];
@@ -54,6 +56,10 @@ function lint(filePath, fileShortName) {
 
 
     var input = io.readFile(filePath), i, e, reason, finalError, lines;
+	// Sometimes there will be an unrecognized code in the first letter.
+	if(input.charCodeAt(0) >= 256){
+		input = input.substr(1);
+	}
     // How many lines of this file.
     lines = input.split('\n').length;
     if (lines <= 0) {

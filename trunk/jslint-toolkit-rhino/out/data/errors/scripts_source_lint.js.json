@@ -15,7 +15,7 @@
     ],
     [
         1,
-        67,
+        73,
         30,
         "Missing semicolon.",
         "var level = 3"

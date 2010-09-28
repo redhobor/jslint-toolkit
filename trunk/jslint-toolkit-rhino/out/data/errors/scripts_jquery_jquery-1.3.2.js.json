@@ -1274,7 +1274,7 @@
         "var nodeCheck = part = isXML ? part : part.toUpperCase();"
     ],
     [
-        3,
+        1,
         1731,
         33,
         "Stopping, unable to continue. (39% scanned).",
