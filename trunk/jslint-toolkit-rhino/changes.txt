@@ -1,5 +1,10 @@
 JSLint-Toolkit Changes:
 
++2010-11-22 v1.1
+	-Fix bugs on Mac.
+	-Use Rhino predefined function "load" instead of pre-combination.
+
+
 +2010-08-13 v1.1
 	+Enhancement.
 
