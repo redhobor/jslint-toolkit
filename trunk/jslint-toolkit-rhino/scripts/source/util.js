@@ -35,7 +35,13 @@ var io = {
         if (!io.exists(path)) {
             return '';
         }
-        return readFile(path, 'utf-8');
+        var rt = readFile(path, 'utf-8');
+        
+        // Sometimes there will be an unrecognized code in the first letter.
+    	if(rt.charCodeAt(0) >= 256){
+    		rt = rt.substr(1);
+    	}
+    	return rt;
     },
 
     saveFile: function(path, content) {
