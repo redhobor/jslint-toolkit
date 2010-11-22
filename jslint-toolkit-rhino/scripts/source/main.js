@@ -9,7 +9,7 @@ var newLine = System.getProperty("line.separator");
 
 var outPath = "";
 
-// Read configuration, outPath will be assigned in the funtion call.
+// Read configuration, outPath will be assigned in this call.
 var treeJSON = config(arguments[0]);
 
 // make necessary directories
