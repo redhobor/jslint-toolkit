@@ -1,0 +1,14 @@
+
+{
+	// JavaScript files to check
+	"includes": ["scripts/source", "scripts/jquery"],
+	
+	// Exclude files
+	"excludes": [],
+	
+	// Exclude file names (Regex expression)
+	"excludeNames": ["\\.svn", "CVS"],
+	
+	// Output directory
+	"outPath": "out"
+}
