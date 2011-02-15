@@ -1,0 +1,9 @@
+[
+    [
+        3,
+        50,
+        3,
+        "Move the invocation into the parens that contain the function.",
+        "})(treeJSON);"
+    ]
+]

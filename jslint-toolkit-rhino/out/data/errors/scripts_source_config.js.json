@@ -1,0 +1,23 @@
+[
+    [
+        3,
+        61,
+        47,
+        "Expected 'String' and instead saw ''''.",
+        "var fileName = pathObject.getName() + \"\";"
+    ],
+    [
+        3,
+        78,
+        18,
+        "Move 'var' declarations to the top of the function.",
+        "for (var i = 0; i < kidPaths.length; i++) {"
+    ],
+    [
+        3,
+        78,
+        18,
+        "Stopping.  (56% scanned).",
+        ""
+    ]
+]
