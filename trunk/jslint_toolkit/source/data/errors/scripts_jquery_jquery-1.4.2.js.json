@@ -1,0 +1,93 @@
+[
+    [
+        3,
+        16,
+        20,
+        "Expected an identifier and instead saw 'undefined' (a reserved word).",
+        "(function( window, undefined ) {"
+    ],
+    [
+        3,
+        38,
+        44,
+        "Unescaped '-'.",
+        "quickExpr = /^[^<]*(<[\\w\\W]+>)[^>]*$|^#([\\w-]+)$/,"
+    ],
+    [
+        3,
+        69,
+        1,
+        "Bad name: 'hasOwnProperty'.",
+        "hasOwnProperty = Object.prototype.hasOwnProperty,"
+    ],
+    [
+        3,
+        204,
+        12,
+        "Expected '===' and instead saw '=='.",
+        "return num == null ?"
+    ],
+    [
+        3,
+        330,
+        33,
+        "Expected '!==' and instead saw '!='.",
+        "if ( (options = arguments[ i ]) != null ) {"
+    ],
+    [
+        3,
+        338,
+        1,
+        "Unexpected 'continue'.",
+        "continue;"
+    ],
+    [
+        3,
+        332,
+        1,
+        "The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype.",
+        "for ( name in options ) {"
+    ],
+    [
+        3,
+        391,
+        13,
+        "Expected a conditional expression and instead saw an assignment.",
+        "while ( (fn = readyList[ i++ ]) ) {"
+    ],
+    [
+        3,
+        441,
+        32,
+        "Expected '===' and instead saw '=='.",
+        "toplevel = window.frameElement == null;"
+    ],
+    [
+        3,
+        482,
+        1,
+        "Empty block.",
+        "return key === undefined || hasOwnProperty.call( obj, key );"
+    ],
+    [
+        3,
+        480,
+        1,
+        "The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype.",
+        "for ( key in obj ) {}"
+    ],
+    [
+        3,
+        486,
+        7,
+        "Move 'var' declarations to the top of the function.",
+        "for ( var name in obj ) {"
+    ],
+    [
+        3,
+        486,
+        7,
+        "Stopping.  (7% scanned).",
+        ""
+    ]
+]
