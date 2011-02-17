@@ -1,0 +1,79 @@
+[
+    [
+        3,
+        16,
+        20,
+        "Expected an identifier and instead saw 'undefined' (a reserved word).",
+        "(function( window, undefined ) {"
+    ],
+    [
+        3,
+        38,
+        48,
+        "Unescaped '-'.",
+        "quickExpr = /^[^<]*(<[\\w\\W]+>)[^>]*$|^#([\\w-]+)$/,"
+    ],
+    [
+        3,
+        69,
+        20,
+        "'hasOwnProperty' is a really bad name.",
+        "hasOwnProperty = Object.prototype.hasOwnProperty,"
+    ],
+    [
+        3,
+        204,
+        20,
+        "Use '===' to compare with 'null'.",
+        "return num == null ?"
+    ],
+    [
+        3,
+        330,
+        41,
+        "Use '!==' to compare with 'null'.",
+        "if ( (options = arguments[ i ]) != null ) {"
+    ],
+    [
+        3,
+        332,
+        13,
+        "The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype.",
+        "for ( name in options ) {"
+    ],
+    [
+        3,
+        441,
+        48,
+        "Use '===' to compare with 'null'.",
+        "toplevel = window.frameElement == null;"
+    ],
+    [
+        3,
+        471,
+        13,
+        "Bad line breaking before '&&'.",
+        "&& !hasOwnProperty.call(obj, \"constructor\")"
+    ],
+    [
+        3,
+        472,
+        13,
+        "Bad line breaking before '&&'.",
+        "&& !hasOwnProperty.call(obj.constructor.prototype, \"isPrototypeOf\") ) {"
+    ],
+    [
+        3,
+        482,
+        9,
+        "Empty block.",
+        "return key === undefined || hasOwnProperty.call( obj, key );"
+    ],
+    [
+        3,
+        482,
+        9,
+        "Cannot read property \"length\" from undefined",
+        ""
+    ]
+]

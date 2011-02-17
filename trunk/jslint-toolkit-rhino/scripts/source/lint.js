@@ -40,6 +40,7 @@ function lint(filePath, fileShortName) {
         /Missing radix parameter\./,
         /'.+' was used before it was defined\./,
 		/Stopping, unable to continue\. \(\d+% scanned\)\./,
+		/Stopping\.\s*(\d+% scanned)\./,
 		/Too many errors\. \(\d+% scanned\)\./];
 
     var fatalErrors = [/Stopping, unable to continue\. \(\d+% scanned\)\./,
@@ -92,8 +93,8 @@ function lint(filePath, fileShortName) {
         }
 
 
-        io.saveFile(outPath + slash + "data" + slash + "errors" + slash + fileName + ".json", JSON.stringify(errors, null, 4));
-        io.copyFile(filePath, outPath + slash + "data" + slash + "source" + slash + fileName);
+        io.saveFile(outPath + slash + "data" + slash + "errors" + slash + fileName + ".txt", JSON.stringify(errors, null, 4));
+        io.copyFile(filePath, outPath + slash + "data" + slash + "source" + slash + fileName + ".txt");
         print(">> " + fileShortName + "fail-> " + errorCount[0] + " " + (errorCount[3] ? errorCount[3] : ""));
     } else {
         print(">> " + fileShortName + "pass");

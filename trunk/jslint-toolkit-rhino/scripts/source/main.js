@@ -49,7 +49,7 @@ var files = [];
     return errorTotal;
 })(treeJSON);
 // save treeJSON
-io.saveFile(outPath + slash + "data" + slash + "json" + slash + "tree.json", JSON.stringify(treeJSON, null, 4));
+io.saveFile(outPath + slash + "data" + slash + "json" + slash + "tree.txt", JSON.stringify(treeJSON, null, 4));
 
 
 
