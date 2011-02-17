@@ -1,0 +1,96 @@
+[
+    {
+        "name": "source",
+        "path": "scripts\\source",
+        "type": "folder",
+        "kids": [
+            {
+                "name": "config.js",
+                "path": "scripts\\source\\config.js",
+                "type": "file",
+                "lines": 137,
+                "errors": [
+                    3,
+                    0,
+                    3
+                ]
+            },
+            {
+                "name": "lint.js",
+                "path": "scripts\\source\\lint.js",
+                "type": "file",
+                "lines": 102,
+                "errors": [
+                    5,
+                    0,
+                    5
+                ]
+            },
+            {
+                "name": "main.js",
+                "path": "scripts\\source\\main.js",
+                "type": "file",
+                "lines": 83,
+                "errors": [
+                    1,
+                    0,
+                    1
+                ]
+            },
+            {
+                "name": "util.js",
+                "path": "scripts\\source\\util.js",
+                "type": "file",
+                "lines": 127,
+                "errors": [
+                    2,
+                    0,
+                    2
+                ]
+            }
+        ],
+        "basePath": "scripts",
+        "fileCount": 4,
+        "errors": [
+            11,
+            0,
+            11
+        ]
+    },
+    {
+        "name": "jquery",
+        "path": "scripts\\jquery",
+        "type": "folder",
+        "kids": [
+            {
+                "name": "jquery-1.3.2.js",
+                "path": "scripts\\jquery\\jquery-1.3.2.js",
+                "type": "file",
+                "lines": 4377,
+                "errors": [
+                    33,
+                    18,
+                    15
+                ]
+            },
+            {
+                "name": "jquery-1.4.2.js",
+                "path": "scripts\\jquery\\jquery-1.4.2.js",
+                "type": "file",
+                "lines": 6241,
+                "errors": [
+                    13,
+                    0,
+                    13
+                ]
+            }
+        ],
+        "basePath": "scripts",
+        "fileCount": 2,
+        "errors": [
+            46,
+            18,
+            28
+        ]
+    }
+]

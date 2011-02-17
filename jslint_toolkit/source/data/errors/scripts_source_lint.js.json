@@ -1,0 +1,37 @@
+[
+    [
+        3,
+        14,
+        7,
+        "Move the invocation into the parens that contain the function.",
+        "})();"
+    ],
+    [
+        3,
+        37,
+        20,
+        "Expected a number and instead saw '''.",
+        "/Expected '{' and instead saw '.+'\\./,"
+    ],
+    [
+        3,
+        37,
+        21,
+        "Expected '}' and instead saw ' '.",
+        "/Expected '{' and instead saw '.+'\\./,"
+    ],
+    [
+        3,
+        49,
+        14,
+        "Move 'var' declarations to the top of the function.",
+        "for (var i = 0; i < regexs.length; i++) {"
+    ],
+    [
+        3,
+        49,
+        14,
+        "Stopping.  (48% scanned).",
+        ""
+    ]
+]
