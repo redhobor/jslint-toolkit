@@ -210,7 +210,7 @@ qx.Class.define("jslint_toolkit.Application",
 
             window.setTimeout(function () {
                 //console.time("AJAX load tree");
-                var req = new qx.io.remote.Request("data/json/tree.json");
+                var req = new qx.io.remote.Request("data/json/tree.txt");
                 req.addListener("completed", function (e) {
                     //console.timeEnd("AJAX load tree");
                     //console.time("Parse content to json");
@@ -333,7 +333,7 @@ qx.Class.define("jslint_toolkit.Application",
             }
             var fileName = this.__getResolveFileName(path);
             //console.log(fileName);
-            var filePath = "data/errors/" + fileName + ".json";
+            var filePath = "data/errors/" + fileName + ".txt";
             //console.log(filePath);
             var req = new qx.io.remote.Request(filePath);
             req.addListener("completed", function (e) {

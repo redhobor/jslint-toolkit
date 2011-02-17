@@ -1,0 +1,30 @@
+[
+    [
+        3,
+        41,
+        4,
+        "Mixed spaces and tabs.",
+        "if(rt.charCodeAt(0) >= 256){"
+    ],
+    [
+        3,
+        42,
+        4,
+        "Mixed spaces and tabs.",
+        "rt = rt.substr(1);"
+    ],
+    [
+        3,
+        43,
+        4,
+        "Mixed spaces and tabs.",
+        "}"
+    ],
+    [
+        3,
+        44,
+        4,
+        "Mixed spaces and tabs.",
+        "return rt;"
+    ]
+]

@@ -38,7 +38,7 @@
 
         window.loadJS = function (url, fn) {
             $("body").html('<span style="position:absolute;left:50%;top:50%;">Loading...</span>');
-            $.get(url, function (data) {
+            $.get(url + '.txt', function (data) {
                 data = data.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\/r\/n/g, "<br />");
                 $("body").html("<pre class=\"brush: js\">" + data + "</pre>");
                 SyntaxHighlighter.highlight();
